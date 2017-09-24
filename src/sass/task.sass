@@ -1,0 +1,263 @@
+//colors
+$black_90: rgba(0, 0, 0, .9)
+$white: #fff
+$black: #000
+$color_flush_orange_approx: #ff8400
+
+//urls
+$url_0: url(./../img/task/header.png)
+$url_1: url(./../img/task/bg2.png)
+
+html
+  height: 100%
+
+body
+  margin: 0
+  height: 100%
+
+.main > .content
+  padding: 0 15%
+
+.header
+  background: $black $url_0 0 0 / 100% 100% no-repeat
+  max-height: 850px
+
+.navigation
+  display: flex
+  height: 110px
+
+.logo
+  display: flex
+  align-items: center
+  color: $white
+  cursor: pointer
+  &_close, &_img_small
+    display: none
+  &_img
+    margin-bottom: 15px
+
+.nav
+  display: flex
+  margin: 0 0 0 auto
+  justify-content: center
+  &_item
+    display: flex
+    align-items: center
+    font-size: 20px
+    & + &
+	    margin-left: 40px
+
+.nav_item a
+	color: $white
+	text-decoration: none
+	text-align: center
+
+.main_page
+  display: flex
+  align-items: center
+  justify-content: space-between
+  margin-top: 50px
+
+.mobile_main
+  margin-bottom: 50px
+
+.article_main
+  max-width: 60%
+  color: $white
+
+.title_main
+  font-size: 38px
+
+.text_main
+  font-size: 20px
+
+.btn_main
+  margin-top: 50px
+  border: 1px solid $white
+  border-radius: 3px
+  background: transparent
+  text-transform: uppercase
+  color: $white
+  padding: 15px 50px
+  font-size: 15px
+  cursor: pointer
+  outline: none
+
+.advantages
+  background-color: $white
+
+.article
+  &_advantages
+    padding: 100px 0
+  &_one
+    font-size: 18px
+    text-align: center
+    color: $color_flush_orange_approx
+    text-transform: uppercase
+  &_two
+  	font-size: 36px
+    text-align: center
+
+.description
+  width: 25%
+  flex-direction: column
+  align-items: center
+  text-align: center
+  margin: 0 4px
+  &_advantages
+    display: flex
+    flex-wrap: wrap
+    width: 100%
+    padding-bottom: 100px
+    justify-content: space-between
+    margin: 0
+
+.bot
+  background: $black $url_1 0 0 / 100% 100% no-repeat
+  max-height: 567px
+  text-align: center
+  padding-top: 100px
+  &_container
+    width: 100%
+    padding-top: 35px
+    display: flex
+    flex-direction: column
+    align-items: center
+
+.title_bot
+  font-size: 36px
+  margin: 0 0 35px 0
+  text-align: center
+  color: $white
+
+.article_bot
+  color: $white
+  max-width: 60%
+  margin-bottom: 50px
+
+.form_bot
+  margin-bottom: 100px
+  width: 100%
+
+.input_bot
+  width: 40%
+  box-sizing: border-box
+  border: 1px solid $white
+  border-radius: 3px
+  background: transparent
+  padding: 15px 50px
+  font-size: 15px
+  outline: none
+  color: $white
+  &::placeholder
+    color: $white
+
+.but_bot
+  height: 100%
+  margin-left: 30px
+  border: 1px solid $white
+  border-radius: 3px
+  background: $white
+  text-transform: uppercase
+  color: $color_flush_orange_approx
+  padding: 15px 50px
+  font-size: 15px
+  cursor: pointer
+  outline: none
+
+.footer
+  height: 110px
+  background-color: $white
+  display: flex
+  align-items: center
+  &__buttons
+    border: 0
+    background: none
+    cursor: pointer
+    & + &
+	    margin-left: 5px
+
+.copyright_footer
+  margin: 0
+  padding: 50px 0
+  font-size: 10px
+
+.social_icons
+  margin-left: auto
+
+.text_description, .title_description, .article_bot
+  font-size: 16px
+
+@media (min-width: 320px) and (max-width: 1023px)
+  .header
+  	max-height: none
+
+  .bot
+    max-height: none
+
+  .description
+    width: 100%
+
+  .article_bot
+    padding: 0
+
+  .input_bot
+    width: auto
+
+  .form_bot
+    display: flex
+    width: auto
+
+  .main_page
+    flex-direction: column
+
+  .article_main
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    margin-bottom: 35px
+
+  .main > .content
+    padding: 0 5%
+
+
+@media screen and (min-width: 320px) and (max-width: 749px)
+  .nav, .logo_img
+    display: none
+
+  .logo_img_small
+    display: block
+    width: 50px
+
+  .form_bot
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+
+  .input_bot
+    width: auto
+
+  .but_bot
+    margin: 30px 0 0
+
+  #logo:checked + .nav
+    display: flex
+    flex-direction: column
+    position: fixed
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    background: $black_90
+    z-index: 1
+    padding-left: 5%
+    .nav_item
+	    margin-left: 0
+  .logo_close
+    display: block
+    color: $white
+    cursor: pointer
+    font-size: 20px
+    margin-bottom: 20px
