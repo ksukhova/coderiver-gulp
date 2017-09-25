@@ -9,94 +9,79 @@ title: Index page
     <header class="navigation">
       <label class="logo" for="logo">
         <div>
-          <img class="logo_img" src="./img/task/logo.png" alt="Coderiver">
-          <img class="logo_img_small" src="./img/task/hamburger-icon.png" alt="hamburger" />
+          <img class="logo__img" src="./img/task/logo.png" alt="Coderiver">
+          <img class="logo__img_small" src="./img/task/hamburger-icon.png" alt="hamburger" />
         </div>
       </label>
       <input type="checkbox" hidden id="logo" />
       <ul class="nav">
-        <label class="logo_close" for="logo">X</label>
+        <label class="logo__close" for="logo">X</label>
         {% import "data/navigation.html" as tests %}
 
         {% for test in tests.list %}
-        <li class="nav_item"><a href="#">{{test.title}}</a></li>
+        <li class="nav__item">
+          <a href="#" class="nav__item-link">{{test.title}}</a>
+        </li>
         {% endfor %}
       </ul>
     </header>
-    <div class="main_page">
-      <div class="article_main">
-        <p class="title_main">Built with app designers in mind</p>
-        <p class="text_main">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+    <div class="main-page">
+      <div class="main-page__article">
+        <p class="main-page__title">Built with app designers in mind</p>
+        <p class="main-page__text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Lorem ipsum dolor sit amet.</p>
-        <button class="btn_main">How it works</button>
+          Lorem ipsum dolor sit amet.
+        </p>
+        <button class="main-page__button">How it works</button>
       </div>
-      <div class="mobile_main">
-        <img class="mobile_iphone" src="./img/task/iphone.png" alt="iphone">
+      <div class="main-page__mobile">
+        <img class="main-page__mobile-img" src="./img/task/iphone.png" alt="iphone">
       </div>
     </div>
   </div>
   <div class="content advantages">
-    <div class="article_advantages">
-      <p class="article_one">How it works</p>
-      <p class="article_two">Lorem ipsum is simply</p>
+    <div class="advantages__article">
+      <p class="advantages__article-one">How it works</p>
+      <p class="advantages__article-two">Lorem ipsum is simply</p>
     </div>
-    <div class="description_advantages">
-      <div class="description">
-        <img class="pic_description" src="./img/task/1.png" alt="1">
-        <p class="title_description">Lorem ipsum is simply dummy</p>
-        <p class="text_description">Lorem ipsum is simply dummy text of the
-          printing and typesetting industry </p>
+    <div class="advantages__description">
+      {% import "data/descriptions.html" as tests %}
+
+      {% for test in tests.descriptions %}
+      <div class="advantages__description-content">
+        <img class="advantages__description-image" src="{{test.img}}" alt="{{test.alt}}">
+        <p class="advantages__description-title">{{test.title}}</p>
+        <p class="advantages__description-text">{{test.text}}</p>
       </div>
-      <div class="description">
-        <img class="pic_description" src="./img/task/2.png" alt="2">
-        <p class="title_description">Lorem ipsum is simply dummy</p>
-        <p class="text_description">Lorem ipsum is simply dummy text of the
-          printing and typesetting industry </p>
-      </div>
-      <div class="description">
-        <img class="pic_description" src="./img/task/3.png" alt="3">
-        <p class="title_description">Lorem ipsum is simply dummy</p>
-        <p class="text_description">Lorem ipsum is simply dummy text of the
-          printing and typesetting industry </p>
-      </div>
-      <div class="description">
-        <img class="pic_description" src="./img/task/4.png" alt="4">
-        <p class="title_description">Lorem ipsum is simply dummy</p>
-        <p class="text_description">Lorem ipsum is simply dummy text of the
-          printing and typesetting industry </p>
-      </div>
-      <div class="description">
-        <img class="pic_description" src="./img/task/5.png" alt="5">
-        <p class="title_description">Lorem ipsum is simply dummy</p>
-        <p class="text_description">Lorem ipsum is simply dummy text of the
-          printing and typesetting industry </p>
-      </div>
-      <div class="description">
-        <img class="pic_description" src="./img/task/6.png" alt="6">
-        <p class="title_description">Lorem ipsum is simply dummy</p>
-        <p class="text_description">Lorem ipsum is simply dummy text of the
-          printing and typesetting industry </p>
-      </div>
+      {% endfor %}
     </div>
   </div>
   <div class="content bot">
-    <div class="bot_container">
-      <p class="title_bot">Receive notification now</p>
-      <p class="article_bot">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Lorem ipsum dolor.</p>
-      <form class="form_bot">
-        <input class="input_bot" name="date" placeholder="Your email address..." />
-        <button class="but_bot">I'm ready!</button>
+    <div class="bot__container">
+      <p class="bot__container-title">Receive notification now</p>
+      <p class="bot__container-article">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Lorem ipsum dolor.
+      </p>
+      <form class="bot__container-form">
+        <input class="bot__container-input" name="date" placeholder="Your email address..." />
+        <button class="bot__container-button">I'm ready!</button>
       </form>
     </div>
   </div>
   <footer class="content footer">
-    <p class="copyright_footer">Copyright by Comtruavip 2017</p>
-    <div class="social_icons">
-      <a href="#" class="footer__buttons face_bot"><img class="face_but" src="./img/task/face.png" alt="6"></a>
-      <a href="#" class="footer__buttons google_bot"><img class="google_but" src="./img/task/google.png" alt="6"></a>
-      <a href="#" class="footer__buttons insta_bot"><img class="insta_but" src="./img/task/instagram.png" alt="6"></a>
+    <p class="footer__copyright">Copyright by Comtruavip 2017</p>
+    <div class="footer__social-icons">
+      <a href="#" class="footer__buttons">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </a>
+      <a href="#" class="footer__buttons">
+        <i class="fa fa-google-plus" aria-hidden="true"></i>
+      </a>
+      <a href="#" class="footer__buttons">
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+      </a>
     </div>
   </footer>
 </main>

@@ -16,7 +16,7 @@ body
   height: 100%
 
 .main > .content
-  padding: 0 15%
+  padding: 0 10%
 
 .header
   background: $black $url_0 0 0 / 100% 100% no-repeat
@@ -31,139 +31,125 @@ body
   align-items: center
   color: $white
   cursor: pointer
-  &_close, &_img_small
+  &__close, &__img_small
     display: none
-  &_img
-    margin-bottom: 15px
 
 .nav
   display: flex
   margin: 0 0 0 auto
   justify-content: center
-  &_item
+  &__item
     display: flex
     align-items: center
     font-size: 20px
     & + &
 	    margin-left: 40px
+    &-link
+	    color: $white
+        text-decoration: none
+        text-align: center
 
-.nav_item a
-	color: $white
-	text-decoration: none
-	text-align: center
-
-.main_page
+.main-page
   display: flex
   align-items: center
   justify-content: space-between
   margin-top: 50px
-
-.mobile_main
-  margin-bottom: 50px
-
-.article_main
-  max-width: 60%
-  color: $white
-
-.title_main
-  font-size: 38px
-
-.text_main
-  font-size: 20px
-
-.btn_main
-  margin-top: 50px
-  border: 1px solid $white
-  border-radius: 3px
-  background: transparent
-  text-transform: uppercase
-  color: $white
-  padding: 15px 50px
-  font-size: 15px
-  cursor: pointer
-  outline: none
+  &__article
+    max-width: 60%
+    color: $white
+  &__mobile
+	  margin-bottom: 50px
+  &__title
+    font-size: 38px
+  &__text
+    font-size: 20px
+  &__button
+    margin-top: 50px
+    border: 1px solid $white
+    border-radius: 3px
+    background: transparent
+    text-transform: uppercase
+    color: $white
+    padding: 15px 50px
+    font-size: 15px
+    cursor: pointer
+    outline: none
 
 .advantages
   background-color: $white
 
-.article
-  &_advantages
+.advantages
+  &__article
     padding: 100px 0
-  &_one
-    font-size: 18px
-    text-align: center
-    color: $color_flush_orange_approx
-    text-transform: uppercase
-  &_two
-  	font-size: 36px
-    text-align: center
-
-.description
-  width: 25%
-  flex-direction: column
-  align-items: center
-  text-align: center
-  margin: 0 4px
-  &_advantages
+    &-one
+      font-size: 18px
+      text-align: center
+      color: $color_flush_orange_approx
+      text-transform: uppercase
+    &-two
+      font-size: 36px
+      text-align: center
+  &__description
     display: flex
     flex-wrap: wrap
     width: 100%
     padding-bottom: 100px
     justify-content: space-between
     margin: 0
+    &-content
+	    width: 25%
+	    flex-direction: column
+	    align-items: center
+	    text-align: center
+	    margin: 0 4px
 
 .bot
   background: $black $url_1 0 0 / 100% 100% no-repeat
   max-height: 567px
   text-align: center
   padding-top: 100px
-  &_container
+  &__container
     width: 100%
     padding-top: 35px
     display: flex
     flex-direction: column
     align-items: center
-
-.title_bot
-  font-size: 36px
-  margin: 0 0 35px 0
-  text-align: center
-  color: $white
-
-.article_bot
-  color: $white
-  max-width: 60%
-  margin-bottom: 50px
-
-.form_bot
-  margin-bottom: 100px
-  width: 100%
-
-.input_bot
-  width: 40%
-  box-sizing: border-box
-  border: 1px solid $white
-  border-radius: 3px
-  background: transparent
-  padding: 15px 50px
-  font-size: 15px
-  outline: none
-  color: $white
-  &::placeholder
-    color: $white
-
-.but_bot
-  height: 100%
-  margin-left: 30px
-  border: 1px solid $white
-  border-radius: 3px
-  background: $white
-  text-transform: uppercase
-  color: $color_flush_orange_approx
-  padding: 15px 50px
-  font-size: 15px
-  cursor: pointer
-  outline: none
+    &-title
+      font-size: 36px
+      margin: 0 0 35px 0
+      text-align: center
+      color: $white
+    &-article
+      color: $white
+      max-width: 60%
+      margin-bottom: 50px
+    &-form
+      margin-bottom: 100px
+      width: 100%
+    &-input
+      width: 40%
+      box-sizing: border-box
+      border: 1px solid $white
+      border-radius: 3px
+      background: transparent
+      padding: 15px 50px
+      font-size: 15px
+      outline: none
+      color: $white
+      &::placeholder
+	      color: $white
+    &-button
+      height: 100%
+      margin-left: 30px
+      border: 1px solid $white
+      border-radius: 3px
+      background: $white
+      text-transform: uppercase
+      color: $color_flush_orange_approx
+      padding: 15px 50px
+      font-size: 15px
+      cursor: pointer
+      outline: none
 
 .footer
   height: 110px
@@ -174,18 +160,18 @@ body
     border: 0
     background: none
     cursor: pointer
+    text-decoration: none
+    color: #808080
     & + &
 	    margin-left: 5px
+  &__copyright
+    margin: 0
+    padding: 50px 0
+    font-size: 10px
+  &__social-icons
+    margin-left: auto
 
-.copyright_footer
-  margin: 0
-  padding: 50px 0
-  font-size: 10px
-
-.social_icons
-  margin-left: auto
-
-.text_description, .title_description, .article_bot
+.advantages__description-text, .advantages__description-title, .bot__container-article
   font-size: 16px
 
 @media (min-width: 320px) and (max-width: 1023px)
@@ -194,53 +180,48 @@ body
 
   .bot
     max-height: none
+    &__article
+      padding: 0
+    &__input
+      width: auto
+    &__form
+      display: flex
+      width: auto
 
-  .description
+  .advantages__description-content
     width: 100%
 
-  .article_bot
-    padding: 0
-
-  .input_bot
-    width: auto
-
-  .form_bot
-    display: flex
-    width: auto
-
-  .main_page
+  .main-page
     flex-direction: column
-
-  .article_main
-    display: flex
-    flex-direction: column
-    align-items: center
-    justify-content: center
-    margin-bottom: 35px
+    &__article
+	    display: flex
+	    flex-direction: column
+	    align-items: center
+	    justify-content: center
+	    margin-bottom: 35px
 
   .main > .content
     padding: 0 5%
 
 
 @media screen and (min-width: 320px) and (max-width: 749px)
-  .nav, .logo_img
+  .nav, .logo__img
     display: none
 
-  .logo_img_small
+  .logo__img_small
     display: block
     width: 50px
 
-  .form_bot
-    display: flex
-    flex-direction: column
-    align-items: center
-    justify-content: center
-
-  .input_bot
-    width: auto
-
-  .but_bot
-    margin: 30px 0 0
+  .bot__container
+    &-form
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+    &-input
+      width: auto
+    &-button
+      margin: 30px 0 0
 
   #logo:checked + .nav
     display: flex
@@ -253,9 +234,9 @@ body
     background: $black_90
     z-index: 1
     padding-left: 5%
-    .nav_item
+    .nav__item
 	    margin-left: 0
-  .logo_close
+  .logo__close
     display: block
     color: $white
     cursor: pointer
